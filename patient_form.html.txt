@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patient Information Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: lightblue;
+      padding: 20px;
+    }
+    h2 {
+      color: inkblue;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      color: slategray;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid lightgray;
+      background-color: white;
+      border-radius: 4px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      background: teal green;
+      color: green;
+      border: 2px solid deep teal;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Patient Information Form</h2>
+  <form id="patientForm">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" required>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" required>
+      <option value="">Select</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="contact">Contact Number:</label>
+    <input type="tel" id="contact" required>
+
+    <label for="symptoms">Symptoms:</label>
+    <textarea id="symptoms" rows="4" placeholder="e.g., fever, cough, headache" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById('patientForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const gender = document.getElementById('gender').value;
+      const contact = document.getElementById('contact').value;
+      const symptoms = document.getElementById('symptoms').value;
+
+      alert(`Patient Info Submitted:\nName: ${name}\nAge: ${age}\nGender: ${gender}\nContact: ${contact}\nSymptoms: ${symptoms}`);
+    });
+  </script>
+
+</body>
+</html>
