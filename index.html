@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patient Login & Registration</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: white;
+      padding: 20px;
+    }
+
+    .form-box {
+      background-color: white;
+      padding: 15px;
+      margin: 20px auto;
+      border: 1px solid gray;
+      max-width: 300px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 6px;
+      margin-top: 5px;
+      border: 1px solid darkgray;
+    }
+
+    input[type="submit"] {
+      margin-top: 15px;
+      width: 100%;
+      padding: 8px;
+      background-color: blue;
+      color: white;
+      border: none;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      color: blue;
+      text-decoration: underline;
+    }
+
+    #register-form {
+      display: none;
+    }
+  </style>
+  <script>
+    function showRegisterForm() {
+      document.getElementById("login-form").style.display = "none";
+      document.getElementById("register-form").style.display = "block";
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Login Form -->
+  <div class="form-box" id="login-form">
+    <h2>Patient Login</h2>
+    <form>
+      <label>Email or Patient ID:</label>
+      <input type="email" name="email" required>
+
+      <label>Password:</label>
+      <input type="password" name="password" required>
+
+      <input type="submit" value="Login">
+    </form>
+    <a href="#" onclick="showRegisterForm()">Not registered? Sign up here</a>
+  </div>
+
+  <!-- Registration Form -->
+  <div class="form-box" id="register-form">
+    <h2>Patient Registration</h2>
+    <form>
+      <label>Full Name:</label>
+      <input type="text" name="name" required>
+
+      <label>Email:</label>
+      <input type="email" name="reg_email" required>
+
+      <label>Phone Number:</label>
+      <input type="text" name="phone" required>
+
+      <label>Create Password:</label>
+      <input type="password" name="reg_password" required>
+
+      <input type="submit" value="Register">
+    </form>
+    <a href="#" onclick="location.reload()">Already registered? Go back to login</a>
+  </div>
+
+</body>
+</html>
